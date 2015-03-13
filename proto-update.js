@@ -3,7 +3,8 @@
 var program = require('commander'),
   fs = require('fs'),
   exec = require('child_process').exec,
-  yeoman = require('yeoman-environment');
+  yeoman = require('yeoman-environment')
+  path = require('path');
 
 
 program
@@ -41,6 +42,8 @@ NonInteractiveAdapter.prototype.diff = function(stuff, stuff2) {
 
 
 if (program.input) {
+	var dirname = path.dirname(program.input);
+
   env = yeoman.createEnv('angular-fullstack', {}, new NonInteractiveAdapter());
   env.lookup();
   fs.readFile(program.input, 'utf8', function(err, data) {
@@ -63,6 +66,7 @@ if (program.input) {
             }
             console.log('HTML updated!');
           });
+          fs.createReadStream(dirname+'/'+route+'.jpg').pipe(fs.createWriteStream('client/assets/images/'+route+'.jpg'));
 
         });
 
