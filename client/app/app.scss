@@ -15,10 +15,26 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
     padding: 0.2em 0;
 }
 
+[ui-view]{
+	height: calc(100vh);
+	position: fixed;
+	width: calc(100vw);
+}
+
+// .grade {
+// 	transform: scale(6) translateY(200px);
+// }
+
 // Component styles are injected through grunt
 // injector
+@import 'Screen-1/Screen-1.scss';
+@import 'Screen-2/Screen-2.scss';
+@import 'Screen-3/Screen-3.scss';
+@import 'Somescreen/Somescreen.scss';
 @import 'account/login/login.scss';
 @import 'admin/admin.scss';
+@import 'grade7/grade7.scss';
+@import 'grade8/grade8.scss';
 @import 'main/main.scss';
 @import 'modal/modal.scss';
 // endinjector

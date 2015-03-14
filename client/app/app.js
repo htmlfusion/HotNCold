@@ -8,12 +8,13 @@ angular.module('angularPrototypeApp', [
   'ui.router',
   'ui.bootstrap'
 ])
-  .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $sceDelegateProvider) {
     $urlRouterProvider
-      .otherwise('/');
+      .otherwise('/Screen-1');
 
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');
+    $sceDelegateProvider.resourceUrlWhitelist(['self']);
   })
 
   .factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {
