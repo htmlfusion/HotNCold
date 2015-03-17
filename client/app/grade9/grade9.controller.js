@@ -4,7 +4,7 @@ angular.module('angularPrototypeApp')
   .controller('Grade9Ctrl', function($scope) {
 
 
-  	var goal = [34.070932, -118.361759];
+    var goal = [34.070932, -118.361759];
     //http://stackoverflow.com/questions/14651060/arrow-pointing-from-a-gps-position-to-another-not-pointing-in-right-direction-in
     function bearing(lat1, lng1, lat2, lng2) {
       var dLon = toRad(lng2 - lng1);
@@ -16,27 +16,35 @@ angular.module('angularPrototypeApp')
       var brng = toDeg(rad);
       return (brng + 360) % 360;
     }
-    
-    //  	$scope.style = {
-    // 	background: '#15376d';
-    // 	background: '-moz-linear-gradient(top, #15376d 0%, #931fa3 25%, #db232c 50%, #dd8023 75%, #f2e14d 100%)',
-    // 	background: '-webkit-gradient(linear, left top, left bottom, color-stop(0%, #15376d), color-stop(25%, #931fa3), color-stop(50%, #db232c), color-stop(75%, #dd8023), color-stop(100%, #f2e14d))',
-    // 	background: '-webkit-linear-gradient(top, #15376d 0%, #931fa3 25%, #db232c 50%, #dd8023 75%, #f2e14d 100%)',
-    // 	background: '-o-linear-gradient(top, #15376d 0%, #931fa3 25%, #db232c 50%, #dd8023 75%, #f2e14d 100%)',
-    // 	background: '-ms-linear-gradient(top, #15376d 0%, #931fa3 25%, #db232c 50%, #dd8023 75%, #f2e14d 100%)',
-    // 	background: 'linear-gradient(to bottom, #15376d 0%, #931fa3 25%, #db232c 50%, #dd8023 75%, #f2e14d 100%)',
-    // 	filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='#15376d', endColorstr='#f2e14d',GradientType=0 )"
-    // };
+
+    $scope.gradePosition = {
+      '{g1}': 0,
+      '{g2}': 25,
+      '{g3}': 50,
+      '{g4}': 75,
+      '{g5}': 100
+    }
 
     window.addEventListener('deviceorientation', function(event) {
-	  var alpha = event.alpha;
-	  var beta = event.beta;
-	  var gamma = event.gamma;
-      $scope.style = {'transform': 'rotate({}deg)'.replace('{}', alpha)};
+
+      $scope.style = {
+    		background: "linear-gradient(to bottom, #f2e14d {g1}%, #dd8023 {g2}%, #db232c {g3}%, #931fa3 {g4}%, #931fa3 {g5}%)",
+        transform: 'rotate({}deg)'
+      };
+
+      var alpha = event.alpha;
+      var beta = event.beta;
+      var gamma = event.gamma;
+
+      $scope.style.transform = $scope.style.transform.replace('{}', alpha);
+      Object.keys($scope.gradePosition).forEach(function(key){
+      	$scope.style.background = $scope.style.background.replace(key, $scope.gradePosition[key]);
+      });
+
       console.log($scope.style);
       $scope.$apply();
-	  // Do something
-	}, false);
+      // Do something
+    }, false);
 
 
     $scope.message = 'Hello';
