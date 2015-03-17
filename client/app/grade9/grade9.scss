@@ -1,0 +1,15 @@
+.grade9 {
+    background: #f2e14d;
+    background: -moz-linear-gradient(top, #f2e14d 0%, #dd8023 25%, #db232c 50%, #931fa3 75%, #931fa3 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f2e14d), color-stop(25%, #dd8023), color-stop(50%, #db232c), color-stop(75%, #931fa3), color-stop(100%, #931fa3));
+    background: -webkit-linear-gradient(top, #f2e14d 0%, #dd8023 25%, #db232c 50%, #931fa3 75%, #f2e14d 100%);
+    background: -o-linear-gradient(top, #f2e14d 0%, #dd8023 25%, #db232c 50%, #931fa3 75%, #931fa3 100%);
+    background: -ms-linear-gradient(top, #f2e14d 0%, #dd8023 25%, #db232c 50%, #931fa3 75%, #931fa3 100%);
+    background: linear-gradient(to bottom, #f2e14d 0%, #dd8023 25%, #db232c 50%, #931fa3 75%, #931fa3 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2e14d', endColorstr='#931fa3',GradientType=0 );
+
+    width: 250%;
+    height: 150%;
+    margin-left: -50%;
+  	margin-top: -50%;
+}
