@@ -64,6 +64,11 @@ angular.module('angularPrototypeApp')
           }
         });
 
+    $scope.style = {
+      background: "linear-gradient(to bottom, #f2e14d 0%, #dd8023 25%, #db232c 50%, #931fa3 75%, #931fa3 100%)",
+      transform: 'rotate({}deg)'
+    };
+
     window.addEventListener('deviceorientation', function(event) {
 
       var alpha = event.alpha,
@@ -72,25 +77,27 @@ angular.module('angularPrototypeApp')
         incr,
         bearing;
 
-      $scope.style = {
-        background: "linear-gradient(to bottom, #f2e14d {g1}%, #dd8023 {g2}%, #db232c {g3}%, #931fa3 {g4}%, #931fa3 {g5}%)",
-        transform: 'rotate({}deg)'
-      };
-
       if (user !== null && totalDistance !== null) {
+
+        $scope.style = {
+          background: "linear-gradient(to bottom, #f2e14d {g1}%, #dd8023 {g2}%, #db232c {g3}%, #931fa3 {g4}%, #931fa3 {g5}%)",
+          transform: 'rotate({}deg)'
+        };
+
         var distance = geolib.getDistance(goal, user);
 
         progress = (totalDistance - distance) / totalDistance * 100;
         remaining = 100 - progress;
         incr = remaining / 4;;
-        bearing = getBearing(goal, user)+alpha;
+        bearing = getBearing(user, goal)+alpha;
+
+        gradePosition['{g1}'] = progress;
+        gradePosition['{g2}'] = progress + incr;
+        gradePosition['{g3}'] = progress + incr * 2;
+        gradePosition['{g4}'] = progress + incr * 3;
+        gradePosition['{g5}'] = progress + incr * 4;
       }
 
-      gradePosition['{g1}'] = progress;
-      gradePosition['{g2}'] = progress + incr;
-      gradePosition['{g3}'] = progress + incr * 2;
-      gradePosition['{g4}'] = progress + incr * 3;
-      gradePosition['{g5}'] = progress + incr * 4;
 
       $scope.style.transform = $scope.style.transform.replace('{}', bearing);
 

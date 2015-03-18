@@ -2,7 +2,7 @@
 
 angular.module('angularPrototypeApp')
   .controller('PackageLandCtrl', function ($scope, $timeout, $state) {
-    $timeout(function(){
+    var timeout = $timeout(function(){
       $state.go('package-start');
-    },5000)
+    },2000);
   });
