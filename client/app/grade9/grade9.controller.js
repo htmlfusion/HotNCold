@@ -5,8 +5,8 @@ angular.module('angularPrototypeApp')
 
 
     var goal = {
-        latitude: 34.070932,
-        longitude: -118.361759
+        latitude: 34.025994,
+        longitude: -118.394696
       },
       user = null,
       totalDistance = null;

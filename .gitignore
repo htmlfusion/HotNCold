@@ -17,3 +17,6 @@ cca.cmd
 cca/www/*
 !cca/www/manifest.mobile.json
 !cca/www/manifest.json
+
+# Vim swap files
+.*.sw*
