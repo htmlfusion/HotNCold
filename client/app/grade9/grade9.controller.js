@@ -83,7 +83,7 @@ angular.module('angularPrototypeApp')
         progress = (totalDistance - distance) / totalDistance * 100;
         remaining = 100 - progress;
         incr = remaining / 4;;
-        bearing = getBearing(user, goal)+alpha;
+        bearing = getBearing(goal, user)+alpha;
       }
 
       gradePosition['{g1}'] = progress;
