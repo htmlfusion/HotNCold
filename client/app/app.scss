@@ -28,12 +28,19 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 // Component styles are injected through grunt
 // injector
 @import 'Portrait-4/Portrait-4.scss';
+@import 'Prize-1/Prize-1.scss';
+@import 'Prize-2/Prize-2.scss';
 @import 'Screen-1/Screen-1.scss';
 @import 'Screen-2/Screen-2.scss';
 @import 'Screen-3/Screen-3.scss';
 @import 'Somescreen/Somescreen.scss';
+@import 'Spin-Start/Spin-Start.scss';
+@import 'Spin-complete/Spin-complete.scss';
+@import 'Spin-medium/Spin-medium.scss';
+@import 'Spin-small/Spin-small.scss';
 @import 'account/login/login.scss';
 @import 'admin/admin.scss';
+@import 'env/env.scss';
 @import 'grade7/grade7.scss';
 @import 'grade8/grade8.scss';
 @import 'grade9/grade9.scss';
@@ -42,4 +49,5 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 @import 'package-start/package-start.scss';
 @import 'package/package.scss';
 @import 'modal/modal.scss';
+@import 'threescene/threescene.scss';
 // endinjector

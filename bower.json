@@ -16,7 +16,8 @@
     "angular-socket-io": "~0.6.0",
     "angular-ui-router": "~0.2.10",
     "geolib": "~2.0.9",
-    "ngCordova": "~0.1.12-alpha"
+    "ngCordova": "~0.1.12-alpha",
+    "threejs": "*"
   },
   "devDependencies": {
     "angular-mocks": ">=1.2.*",
