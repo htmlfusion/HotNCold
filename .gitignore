@@ -1,0 +1,19 @@
+node_modules
+public
+.tmp
+.sass-cache
+.idea
+client/bower_components
+dist
+/server/config/local.env.js
+
+
+# Other cca artifacts.
+cca
+cca.cmd
+
+
+# All files accept for the manifests will be copied by grunt
+cca/www/*
+!cca/www/manifest.mobile.json
+!cca/www/manifest.json
