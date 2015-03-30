@@ -4,7 +4,7 @@ angular.module('gishAppApp')
   .config(function ($stateProvider) {
     $stateProvider
       .state('intro', {
-        url: '/intro',
+        url: '/',
         templateUrl: 'app/intro/intro.html',
         controller: 'IntroCtrl'
       });
