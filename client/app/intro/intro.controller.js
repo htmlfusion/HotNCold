@@ -2,5 +2,8 @@
 
 angular.module('gishAppApp')
   .controller('IntroCtrl', function ($scope) {
-    $scope.message = 'Hello';
+    $scope.intros = [
+      {title: 'Welcome'},
+      {title: 'Start walking'}
+    ];
   });
