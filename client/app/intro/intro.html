@@ -1,5 +1,7 @@
 <div class="intro page col-md-12">
   <ul rn-carousel class="slide">
-    <li ng-repeat="intro in intros">{{intro.title}}</li>
+    <li ng-repeat="intro in intros">{{intro.title}}
+      <a ng-if="intro.link" ui-sref="{{intro.link}}"> Go here </a>
+    </li>
   </ul>
 </div>

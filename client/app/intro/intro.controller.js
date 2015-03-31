@@ -4,6 +4,6 @@ angular.module('gishAppApp')
   .controller('IntroCtrl', function ($scope) {
     $scope.intros = [
       {title: 'Welcome'},
-      {title: 'Start walking'}
+      {title: 'Start walking', link: 'gradient'}
     ];
   });
