@@ -1,8 +1,11 @@
 'use strict';
 
 angular.module('gishAppApp')
-  .controller('GradientCtrl', function($scope, $cordovaGeolocation) {
+  .controller('GradientCtrl', function($scope, $cordovaGeolocation, $state) {
 
+
+    //On win $state.go('goodjob');
+    
     var goal = {
         latitude: 34.025994,
         longitude: -118.394696
