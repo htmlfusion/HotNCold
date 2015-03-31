@@ -6,7 +6,8 @@ angular.module('gishAppApp', [
   'ngSanitize',
   'btford.socket-io',
   'ui.router',
-  'angular-carousel'
+  'angular-carousel',
+  'ngCordova'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider

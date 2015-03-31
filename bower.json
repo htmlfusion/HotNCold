@@ -12,7 +12,8 @@
     "lodash": "~2.4.1",
     "angular-socket-io": "~0.6.0",
     "angular-ui-router": "~0.2.10",
-    "angular-carousel": "~0.3.10"
+    "angular-carousel": "~0.3.10",
+    "ngCordova": "~0.1.14-alpha"
   },
   "devDependencies": {
     "angular-mocks": ">=1.2.*",
