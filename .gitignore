@@ -11,9 +11,14 @@ dist
 # Other cca artifacts.
 cca
 cca.cmd
+!cca/install-plugin.sh
 
 
 # All files accept for the manifests will be copied by grunt
 cca/www/*
 !cca/www/manifest.mobile.json
 !cca/www/manifest.json
+
+# VIM swap files
+
+.*.sw*
