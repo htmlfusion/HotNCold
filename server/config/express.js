@@ -37,8 +37,8 @@ module.exports = function(app) {
   app.use(session({
     secret: config.secrets.session,
     resave: true,
-    saveUninitialized: true,
-    store: new mongoStore({ mongoose_connection: mongoose.connection })
+    saveUninitialized: true
+    //store: new mongoStore({ mongoose_connection: mongoose.connection })
   }));
   
   if ('production' === env) {
