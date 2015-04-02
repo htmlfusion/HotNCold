@@ -9,8 +9,6 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 
 .browsehappy {
     margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
     padding: 0.2em 0;
 }
 
@@ -24,13 +22,20 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 body {
   margin: 0px;
   padding: 0px;
+  font-family: sans-serif;
+  font-size: 1.5em;
+  
 }
 
 .page {
   width: 100%;
   height: 100%;
+  background: linear-gradient(to bottom, rgba(240,50,25,1)0%, rgba(37,0,245,1)100%);
+  text-align: center;
 }
-
+.page li {
+  margin-top: 400px;
+}
 [ui-view]{
   position: fixed;
   width: 100%;
