@@ -2,6 +2,7 @@
 $fa-font-path: "/bower_components/font-awesome/fonts";
 
 @import 'font-awesome/scss/font-awesome';
+@import url(http://fonts.googleapis.com/css?family=Lato:400,300);
 
 /**
  * App-wide Styles
@@ -22,20 +23,107 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 body {
   margin: 0px;
   padding: 0px;
-  font-family: sans-serif;
-  font-size: 1.5em;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  background: #fff;
   
 }
-
 .page {
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(240,50,25,1)0%, rgba(37,0,245,1)100%);
+  /*background: linear-gradient(to bottom, rgba(240,50,25,1)0%, rgba(37,0,245,1)100%);*/
   text-align: center;
 }
-.page li {
-  margin-top: 400px;
+.page .slide {
+  position: fixed;
+  margin: 0;
+  z-index: 10;
+  background: linear-gradient(to bottom, rgba(240,50,25,1)0%, rgba(37,0,245,1)100%);
 }
+.page .caption {
+  color: #fff;
+  font-size: 1.9em;
+  padding: 0 1.2em;
+  position: relative;
+  top: 45%;
+  -moz-transform: translateY(-45%);
+  -webkit-transform: translateY(-45%);
+  transform: translateY(-45%);
+}
+.yass:last-of-type {
+  background: #fff;
+}
+.page
+  .caption.last {
+    color: #aaa;
+}
+.page .caption.last h1 {
+  font-size: 1.2em;
+  font-weight: 300;
+  margin: 0;
+}
+.page .caption.last h2 {
+  font-size: .4em;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin: 0;
+  text-transform: uppercase;
+}
+.page .caption.last img {
+  height: 200px;
+  margin-top: 75px;
+  pointer-events: none;
+  width: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.page .caption.last h3 {
+  border: 1px solid #aaa;
+  border-radius: .25em;
+  font-size: .8em;
+  font-weight: 300;
+  letter-spacing: -1px;
+  margin: 50px auto 0 auto;
+  padding: 10px;
+  max-width: 150px;
+}
+.page .hot-text {
+  top: 20%;
+}
+.page .cold-text {
+  top: 70%;
+}
+
+.animate-enter, 
+.animate-leave
+{ 
+    -webkit-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -moz-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -ms-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -o-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    text-overflow: clip;
+    white-space:nowrap;
+} 
+ 
+.animate-leave.animate-leave-active,
+.animate-enter {
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+}
+ 
+.animate-enter.animate-enter-active, 
+.animate-leave {
+    opacity: 1;
+    width: 150px;
+    height: 30px;
+}
+
 [ui-view]{
   position: fixed;
   width: 100%;
