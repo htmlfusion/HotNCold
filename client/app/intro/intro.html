@@ -1,57 +1,9 @@
 <div class="intro page col-md-12">
   <ul rn-carousel class="carousel-indicators slide">
-    <li ng-repeat="intro in intros" ng-animate="'animate'" class="yass">
-      <!-- {{intro.caption}}
-        <h2>{{intro.caption.earned}}</h2>
-        <h1>{{intro.caption.badge}}</h1>
-        <div>
-          <img ng-src="{{intro.caption.src}}" />
-        </div>
-        <h2>{{intro.caption.prize}}</h2>
-        <h1>{{intro.caption.points}}</h1>
-        <h3>{{intro.caption.replay}}</h3> -->
-      
-      
-      
-      
-      <div class="caption">
+    <li ng-repeat="intro in intros" class="yass">
+      <div class="caption" ng-class="intro.alignment">
         {{intro.caption}}
       </div>
-      <div class="caption ">
-        {{intro.caption2}}
-      </div>
-      <div class="caption hot-text">
-        {{intro.caption3}}
-      </div>
-      <div class="caption cold-text">
-        {{intro.caption4}}
-      </div>
-      <div class="caption">
-        {{intro.caption5}}
-      </div>
-      <div class="caption">
-        {{intro.caption6}}
-      </div>
-      
-      <div class="caption last">
-        <h2>{{intro.caption7.earned}}</h2>
-        <h1>{{intro.caption7.badge}}</h1>
-        <div>
-          <img ng-src="{{intro.caption7.src}}" />
-        </div>
-        <h2>{{intro.caption7.prize}}</h2>
-        <h1>{{intro.caption7.points}}</h1>
-        <h3>{{intro.caption7.replay}}</h3>
-      </div>
-      
-      
-      <!-- <ol rn-carousel-indicators rn-carousel-index="carouselIndex3">
-        <li data-target="intro" data-slide-to="0" class="active"></li>
-        <li data-target="Carousel" data-slide-to="1"></li>
-        <li data-target="Carousel" data-slide-to="2"></li>
-        <li data-target="Carousel" data-slide-to="3"></li>
-        <li data-target="Carousel" data-slide-to="4"></li>
-      </ol> -->
     </li>
   </ul>
 </div>
