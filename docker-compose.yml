@@ -1,0 +1,23 @@
+web:
+  build: .
+  volumes:
+    - "app:/src/app"
+  ports:
+    - "3030:3000"
+  links:
+    - "cache:redis"
+    - "db:mongo"
+
+cache:
+  image: redis
+
+db:
+  image: mongo
+  command: "mongod --smallfiles"
+  volumes:
+    - "/mnt/sda1/var/lib/mongo-data:/data"
+  ports:
+    - "27018:27017"
+cca:
+   build: cca/
+   volumes: cca:/data
