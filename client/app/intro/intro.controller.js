@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gishAppApp')
-  .controller('IntroCtrl', function ($scope, $timeout) {
+  .controller('IntroCtrl', function ($scope, $timeout, $state) {
 
     $scope.carouselIndex = 0;
     $scope.intros = [{
@@ -16,10 +16,16 @@ angular.module('gishAppApp')
         alignment: 'cold-text'
       },{
         caption: 'Start moving!'
-      },{
-        caption: ''
       }
     ];
+
+    $scope.$watch('carouselIndex', function(){
+      if($scope.carouselIndex === 4 ){
+        $timeout(function(){
+          $state.go('gradient');
+        },2500);
+      }
+    });
 
   });
   
