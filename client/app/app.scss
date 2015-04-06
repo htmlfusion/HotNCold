@@ -21,9 +21,28 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
     }
 }
 
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+}
+
+[ui-view]{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
 // Component styles are injected through grunt
 // injector
 @import 'account/login/login.scss';
 @import 'admin/admin.scss';
+@import 'gradient/gradient.scss';
+@import 'intro/intro.scss';
 @import 'main/main.scss';
+@import 'colors/colors.scss';
 // endinjector
