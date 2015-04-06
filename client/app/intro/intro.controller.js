@@ -3,6 +3,7 @@
 angular.module('gishAppApp')
   .controller('IntroCtrl', function ($scope, $timeout) {
 
+    $scope.carouselIndex = 0;
     $scope.intros = [{
         caption: 'Welcome'
       },{

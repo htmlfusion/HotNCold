@@ -1,5 +1,8 @@
 <div class="intro page col-md-12">
-  <ul rn-carousel class="carousel-indicators slide">
+  <div rn-carousel-indicators ng-if="intros.length > 1" slides="intros" 
+       rn-carousel-index="carouselIndex">
+  </div>
+  <ul rn-carousel class="carousel-indicators slide" rn-carousel-index="carouselIndex">
     <li ng-repeat="intro in intros">
       <div class="caption" ng-class="intro.alignment">
         {{intro.caption}}
