@@ -1,9 +1,9 @@
 web:
   build: .
   volumes:
-    - "app:/src/app"
+    - "./:/src"
   ports:
-    - "3030:3000"
+    - "3030:9000"
   links:
     - "cache:redis"
     - "db:mongo"
@@ -18,6 +18,6 @@ db:
     - "/mnt/sda1/var/lib/mongo-data:/data"
   ports:
     - "27018:27017"
-cca:
-   build: cca/
-   volumes: cca:/data
+#cca:
+#   build: cca/
+#   volumes: cca:/data

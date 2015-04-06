@@ -12,7 +12,7 @@ WORKDIR /src
 ADD ./package.json /src/package.json
 RUN npm install
 
-ADD app/Gruntfile.js /src/Gruntfile.js
+ADD Gruntfile.js /src/Gruntfile.js
 
 EXPOSE 3000
 EXPOSE 35729
