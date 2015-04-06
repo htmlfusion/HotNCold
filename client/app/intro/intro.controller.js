@@ -15,6 +15,8 @@ angular.module('gishAppApp')
         alignment: 'cold-text'
       },{
         caption: 'Start moving!'
+      },{
+        caption: ''
       }
     ];
 

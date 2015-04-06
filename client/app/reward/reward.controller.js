@@ -2,5 +2,9 @@
 
 angular.module('gishAppApp')
   .controller('RewardCtrl', function ($scope) {
-    $scope.message = 'Hello';
+    $scope.rewards = [{
+      badge: "Explorer"
+    }, {
+      badge: "Kale"
+    }];
   });

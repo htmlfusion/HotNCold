@@ -1,0 +1,52 @@
+/* Reward Section */
+.reward {
+  margin: 0 auto;
+  text-align: center;
+  
+  position: relative;
+  top: 45%;
+  transform: translateY(-45%);
+}
+.reward h1 {
+  font-size: 1.2em;
+  font-weight: 300;
+  margin: 0;
+}
+.reward h2 {
+  font-size: .4em;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin: 0;
+  text-transform: uppercase;
+}
+.reward img {
+  height: 200px;
+  margin-top: 50px;
+  pointer-events: none;
+  width: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.reward a {
+  border: 1px solid #aaa;
+  border-radius: .25em;
+  color: #aaa;
+  cursor: pointer;
+  display: block;
+  font-size: .8em;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  margin: 50px auto 0 auto;
+  padding: 5px 10px;
+  text-decoration: none;
+  width: 50px;
+  
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+.reward a:hover {
+  color: #fff;
+  background: #aaa;
+}
