@@ -1,13 +1,42 @@
 'use strict';
 
 angular.module('gishAppApp')
-  .controller('IntroCtrl', function ($scope, $timeout) {
-    $scope.intros = [
-      {title: "Welcome"},
-      {title: "You're going to have to move your feet", link: "gradient"},
-      {title: "The closer you get, the hotter you get", link: "gradient"},
-      {title: "The further you get, the colder you get", link: "gradient"},
-      {title: "Start moving!", link: "gradient"},
+  .controller('IntroCtrl', function ($scope, $timeout, $state) {
+
+    $scope.carouselIndex = 0;
+    $scope.intros = [{
+        caption: 'Welcome'
+      },{
+        caption: "You're going to have to move your feet"
+      },{
+        caption: 'The closer you get, the hotter you get',
+        alignment: 'hot-text'
+      },{
+        caption: 'The further you get, the colder you get',
+        alignment: 'cold-text'
+      },{
+        caption: 'Start moving!'
+      }
     ];
-    $scope.user = {name: ''};
+
+    var promise;
+    $scope.$watch('carouselIndex', function(){
+
+      if($scope.carouselIndex === 4 ){
+
+        promise = $timeout(function(){
+          $state.go('gradient');
+        }, 2500);
+
+      } else if(promise){
+
+        $timeout.cancel(promise);
+        promise = null;
+
+      }
+
+    });
+
   });
+  
+

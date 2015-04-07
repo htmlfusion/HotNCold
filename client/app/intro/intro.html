@@ -1,18 +1,14 @@
 <div class="intro page col-md-12">
-  <input ng-model="user.name"></input>
-  <label>{{user.name}}</label>
-  <ul rn-carousel class="slide">
-    <li ng-repeat="intro in intros">{{intro.title}}
-      <a ng-if="intro.link" ui-sref="{{intro.link}}">You're going to have to move your feet</a>
-    </li>
-    <li ng-repeat="intro in intros">{{intro.title}}
-      <a ng-if="intro.link" ui-sref="{{intro.link}}">The closer you get, the hotter you get</a>
-    </li>
-    <li ng-repeat="intro in intros">{{intro.title}}
-      <a ng-if="intro.link" ui-sref="{{intro.link}}">The further you get, the colder you get</a>
-    </li>
-    <li ng-repeat="intro in intros">{{intro.title}}
-      <a ng-if="intro.link" ui-sref="{{intro.link}}">Start moving!</a>
+
+  <ul rn-carousel class="carousel-indicators slide" rn-carousel-index="carouselIndex">
+    <li ng-repeat="intro in intros">
+      <div class="caption" ng-class="intro.alignment">
+        {{intro.caption}}
+      </div>
     </li>
   </ul>
+
+  <div rn-carousel-indicators ng-if="intros.length > 1" slides="intros" 
+       rn-carousel-index="carouselIndex">
+  </div>
 </div>

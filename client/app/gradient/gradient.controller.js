@@ -5,13 +5,14 @@ angular.module('gishAppApp')
 
 
     //On win $state.go('goodjob');
-    
-    var goal = {
-        latitude: 34.025994,
-        longitude: -118.394696
-      },
+
+
+    var goal = null,
       user = null,
-      totalDistance = null;
+      totalDistance = null,
+      minRange = .001,
+      maxRange = .01,
+      findDistance = 100;
 
     function toRad(deg) {
       return deg * Math.PI / 180;
@@ -20,6 +21,24 @@ angular.module('gishAppApp')
     function toDeg(rad) {
       return rad * 180 / Math.PI;
     }
+
+    function getRandomBetween(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+
+    function nearByLocation(location){
+
+      var latDir = (Math.random()>.5) ? 1 : -1,
+        longDir = (Math.random()>.5) ? 1 : -1,
+        randLat = getRandomBetween(minRange, maxRange) * latDir,
+        randLong = getRandomBetween(minRange, maxRange) * longDir;
+        
+      return {
+        latitude: location.latitude + randLat,
+        longitude: location.longitude + randLong,
+      }
+    };
 
 
     //http://stackoverflow.com/questions/14651060/arrow-pointing-from-a-gps-position-to-another-not-pointing-in-right-direction-in
@@ -61,6 +80,9 @@ angular.module('gishAppApp')
         },
         function(location) {
           user = location.coords;
+          if( !goal ){
+            goal = nearByLocation(user);
+          }
           if (totalDistance === null) {
             totalDistance = geolib.getDistance(goal, user);
           }
@@ -71,7 +93,7 @@ angular.module('gishAppApp')
       transform: 'rotate({}deg)'
     };
 
-    window.addEventListener('deviceorientation', function(event) {
+    var onOrientationChange = function(event) {
 
       var alpha = event.alpha,
         remaining = null,
@@ -87,6 +109,13 @@ angular.module('gishAppApp')
         };
 
         var distance = geolib.getDistance(goal, user);
+
+        if(distance<=findDistance){
+          goal = null;
+          totalDistance = null;
+          window.removeEventListener('deviceorientation', onOrientationChange);
+          $state.go('reward');
+        }
 
         progress = (totalDistance - distance) / totalDistance * 100;
         remaining = 100 - progress;
@@ -111,6 +140,8 @@ angular.module('gishAppApp')
       console.log($scope.style);
       $scope.$apply();
       // Do something
-    }, false);
+    };
+
+    window.addEventListener('deviceorientation', onOrientationChange, false);
 
   });
