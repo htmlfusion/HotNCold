@@ -2,7 +2,6 @@
 
 // Development specific configuration
 // ==================================
-console.log(process.env);
 module.exports = {
   // MongoDB connection options
   mongo: {
