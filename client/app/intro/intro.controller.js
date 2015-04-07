@@ -19,12 +19,22 @@ angular.module('gishAppApp')
       }
     ];
 
+    var promise;
     $scope.$watch('carouselIndex', function(){
+
       if($scope.carouselIndex === 4 ){
-        $timeout(function(){
+
+        promise = $timeout(function(){
           $state.go('gradient');
-        },2500);
+        }, 2500);
+
+      } else if(promise){
+
+        $timeout.cancel(promise);
+        promise = null;
+
       }
+
     });
 
   });
