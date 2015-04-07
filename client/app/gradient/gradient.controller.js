@@ -93,7 +93,7 @@ angular.module('gishAppApp')
       transform: 'rotate({}deg)'
     };
 
-    window.addEventListener('deviceorientation', function(event) {
+    var onOrientationChange = function(event) {
 
       var alpha = event.alpha,
         remaining = null,
@@ -110,7 +110,10 @@ angular.module('gishAppApp')
 
         var distance = geolib.getDistance(goal, user);
 
-        if(findDistance<=distance){
+        if(distance<=findDistance){
+          goal = null;
+          totalDistance = null;
+          window.removeEventListener('deviceorientation', onOrientationChange);
           $state.go('reward');
         }
 
@@ -137,6 +140,8 @@ angular.module('gishAppApp')
       console.log($scope.style);
       $scope.$apply();
       // Do something
-    }, false);
+    };
+
+    window.addEventListener('deviceorientation', onOrientationChange, false);
 
   });

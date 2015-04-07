@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><widget xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" id="com.gishwhes.hotncold" version="0.1.1">
-    <name>gish-app</name>
+    <name>Hot N Cold</name>
 
-    <description>A Sample Chrome App</description>
+    <description>A treasure hunt</description>
 
     <author>Author Name &lt;a@b.com></author>
 
@@ -10,7 +10,7 @@
     <preference name="StatusBarBackgroundColor" value="#000000"/>
     <preference name="iosPersistentFileLocation" value="Library"/>
     <preference name="AndroidPersistentFileLocation" value="Internal"/>
-    <preference name="Orientation" value="portrait" />
+    <preference name="Orientation" value="portrait"/>
     
 
     <content src="plugins/org.chromium.bootstrap/chromeapp.html"/>
