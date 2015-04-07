@@ -15,7 +15,7 @@ db:
   image: mongo
   command: "mongod --smallfiles"
   volumes:
-    - "/mnt/sda1/var/lib/mongo-data:/data"
+    - "/var/opt/mongo-data:/data"
   ports:
     - "27018:27017"
 #cca:

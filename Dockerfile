@@ -6,7 +6,7 @@ RUN gem install sass
 
 RUN mkdir /src
 
-RUN npm install grunt-cli -g
+RUN npm install grunt-cli -g; npm install bower -g
 
 WORKDIR /src
 ADD ./package.json /src/package.json
