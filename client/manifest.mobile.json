@@ -1,3 +1,4 @@
 {
-    "packageId": "com.gishwhes.hotncold"
+    "packageId": "com.gishwhes.hotncold",
+    "androidTheme": "@android:style/Theme.Light"
 }

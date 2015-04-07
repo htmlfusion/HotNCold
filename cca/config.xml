@@ -11,6 +11,7 @@
     <preference name="iosPersistentFileLocation" value="Library"/>
     <preference name="AndroidPersistentFileLocation" value="Internal"/>
     <preference name="Orientation" value="portrait"/>
+    <preference name="BackgroundColor" value="0x000000ff"/>
     
 
     <content src="plugins/org.chromium.bootstrap/chromeapp.html"/>
