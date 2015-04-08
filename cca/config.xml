@@ -12,6 +12,7 @@
     <preference name="AndroidPersistentFileLocation" value="Internal"/>
     <preference name="Orientation" value="portrait"/>
     <preference name="BackgroundColor" value="0x000000ff"/>
+    <preference name="Fullscreen" value="true"/>
     
 
     <content src="plugins/org.chromium.bootstrap/chromeapp.html"/>
