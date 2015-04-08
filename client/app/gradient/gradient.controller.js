@@ -90,7 +90,8 @@ angular.module('gishAppApp')
 
     $scope.style = {
       background: "linear-gradient(to bottom, #f2e14d 0%, #dd8023 25%, #db232c 50%, #931fa3 75%, #931fa3 100%)",
-      transform: 'rotate({}deg)'
+      transform: 'rotate({}deg)',
+      '-webkit-transform': 'rotate({}deg)'
     };
 
     var onOrientationChange = function(event) {
@@ -105,7 +106,8 @@ angular.module('gishAppApp')
 
         $scope.style = {
           background: "linear-gradient(to bottom, #f2e14d {g1}%, #dd8023 {g2}%, #db232c {g3}%, #931fa3 {g4}%, #931fa3 {g5}%)",
-          transform: 'rotate({}deg)'
+          transform: 'rotate({}deg)',
+          '-webkit-transform': 'rotate({}deg)'
         };
 
         var distance = geolib.getDistance(goal, user);
@@ -131,6 +133,7 @@ angular.module('gishAppApp')
 
 
       $scope.style.transform = $scope.style.transform.replace('{}', bearing);
+      $scope.style['-webkit-transform'] = $scope.style['-webkit-transform'].replace('{}', bearing);
 
 
       Object.keys(gradePosition).forEach(function(key) {
