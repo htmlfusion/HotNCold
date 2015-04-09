@@ -88,8 +88,10 @@ angular.module('gishAppApp')
           }
         });
 
+    //linear-gradient(rgb(240, 50, 25) 0%, rgb(37, 0, 245) 100%)
+
     $scope.style = {
-      background: "linear-gradient(to bottom, #f2e14d 0%, #dd8023 25%, #db232c 50%, #931fa3 75%, #931fa3 100%)",
+      background: "linear-gradient(rgb(240, 50, 25) 0%, rgb(37, 0, 245) 100%)",
       transform: 'rotate({}deg)',
       '-webkit-transform': 'rotate({}deg)'
     };
@@ -105,7 +107,7 @@ angular.module('gishAppApp')
       if (user !== null && totalDistance !== null) {
 
         $scope.style = {
-          background: "linear-gradient(to bottom, #f2e14d {g1}%, #dd8023 {g2}%, #db232c {g3}%, #931fa3 {g4}%, #931fa3 {g5}%)",
+          background: "linear-gradient(rgb(240, 50, 25) {g1}%, rgb(37, 0, 245) 100%)",
           transform: 'rotate({}deg)',
           '-webkit-transform': 'rotate({}deg)'
         };
@@ -125,10 +127,10 @@ angular.module('gishAppApp')
         bearing = getBearing(user, goal) + alpha;
 
         gradePosition['{g1}'] = progress;
-        gradePosition['{g2}'] = progress + incr;
-        gradePosition['{g3}'] = progress + incr * 2;
-        gradePosition['{g4}'] = progress + incr * 3;
-        gradePosition['{g5}'] = progress + incr * 4;
+        // gradePosition['{g2}'] = progress + incr;
+        // gradePosition['{g3}'] = progress + incr * 2;
+        // gradePosition['{g4}'] = progress + incr * 3;
+        // gradePosition['{g5}'] = progress + incr * 4;
       }
 
 
