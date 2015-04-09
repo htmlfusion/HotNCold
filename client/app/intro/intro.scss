@@ -16,15 +16,30 @@
         right: 0;
     }
     .caption {
-    opacity: 0;
-    -webkit-transition: .4s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    -moz-transition: .4s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    -ms-transition: .4s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    -o-transition: .4s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    transition: .4s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+
+      color: #fff;
+      font-size: 1.9em;
+      opacity: 0;
+      padding: 0 1.2em;
+      position: relative;
+      top: 45%;
+      -moz-transform: translateY(-45%);
+      -webkit-transform: translateY(-45%);
+      transform: translateY(-45%);
+      -webkit-transition: .4s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+      -moz-transition: .4s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+      -ms-transition: .4s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+      -o-transition: .4s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+      transition: .4s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
 
     }
-    .everyone-else,
+    .hot-text {
+      top: 20%;
+    }
+    .cold-text {
+      top: 70%;
+    }
+    .standard-text,
     .cold-text,
     .hot-text {
       opacity: 1;
