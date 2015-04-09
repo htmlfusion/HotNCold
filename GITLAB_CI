@@ -1,0 +1,4 @@
+git submodule update --init
+npm install --cache-min 999999 --loglevel warn
+bower install --allow-root
+grunt test

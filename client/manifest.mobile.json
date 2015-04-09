@@ -1,3 +1,4 @@
 {
-    "packageId": "com.your.company.whoop"
+    "packageId": "com.gishwhes.hotncold",
+    "androidTheme": "@android:style/Theme.Light"
 }

@@ -1,0 +1,35 @@
+<div class="intro page col-md-12">
+
+  <ul rn-carousel class="carousel-indicators slide" rn-carousel-index="carouselIndex">
+    <li>
+      <div class="caption" ng-class="{'standard-text': carouselIndex===0}">
+        Welcome
+      </div>
+    </li>
+    <li>
+      <div class="caption" ng-class="{'standard-text': carouselIndex===1}">
+        You're going to have to move your feet
+      </div>
+    </li>
+    <li>
+      <div class="caption" ng-class="{'hot-text': carouselIndex===2}">
+        The closer you get, the hotter you get
+      </div>
+    </li>
+    <li>
+      <div class="caption" ng-class="{'cold-text': carouselIndex===3}">
+        The further you get, the colder you get
+      </div>
+    </li>
+    <li>
+      <div class="caption" ng-class="{'standard-text': carouselIndex===4}">
+        Start moving
+      </div>
+    </li>
+
+  </ul>
+
+  <div rn-carousel-indicators slides="[0,1,2,3,4]" 
+       rn-carousel-index="carouselIndex">
+  </div>
+</div>
