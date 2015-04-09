@@ -11,7 +11,7 @@
     <preference name="iosPersistentFileLocation" value="Library"/>
     <preference name="AndroidPersistentFileLocation" value="Internal"/>
     <preference name="Orientation" value="portrait"/>
-    <preference name="BackgroundColor" value="0x000000ff"/>
+    <preference name="BackgroundColor" value="#ff000000"/>
     <preference name="Fullscreen" value="true"/>
     
 
