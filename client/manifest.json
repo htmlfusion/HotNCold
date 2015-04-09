@@ -2,7 +2,7 @@
     "name": "Hot N Cold",
     "description": "A treasure hunt",
     "manifest_version": 2,
-    "minimum_chrome_version": "23",
+    "minimum_chrome_version": "36",
     "version": "0.1.1",
     "offline_enabled": true,
     "icons": {

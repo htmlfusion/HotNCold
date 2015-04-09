@@ -1,7 +1,7 @@
-
 $fa-font-path: "/bower_components/font-awesome/fonts";
 
-@import 'font-awesome/scss/font-awesome';
+@import "font-awesome/scss/font-awesome";
+
 @import url(http://fonts.googleapis.com/css?family=Lato:400,300);
 
 /**
@@ -21,88 +21,92 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 }
 
 body {
-  margin: 0px;
-  padding: 0px;
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  background: black;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    background: black;
 }
 
 .page {
-  width: 100%;
-  height: 100%;
-  text-align: center;
-}
-.page .slide {
-  position: fixed;
-  margin: 0;
-  z-index: 10;
-  background: linear-gradient(to bottom, rgba(240,50,25,1)0%, rgba(37,0,245,1)100%);
-}
-.page .caption {
-  color: #fff;
-  font-size: 1.9em;
-  padding: 0 1.2em;
-  position: relative;
-  top: 45%;
-  -moz-transform: translateY(-45%);
-  -webkit-transform: translateY(-45%);
-  transform: translateY(-45%);
-}
-.page
-  .caption.last {
-    color: #aaa;
-}
-.page .hot-text {
-  top: 20%;
-}
-.page .cold-text {
-  top: 70%;
+    width: 100%;
+    height: 100%;
+    text-align: center;
 }
 
-.animate-enter, 
-.animate-leave
-{ 
-    -webkit-transition: .3s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    -moz-transition: .3s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    -ms-transition: .3s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    -o-transition: .3s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    transition: .3s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    
+.page .slide {
+    position: fixed;
+    margin: 0;
+    z-index: 10;
+    background: linear-gradient(to bottom, rgba(240, 50, 25, 1) 0%, rgba(37, 0, 245, 1) 100%);
+}
+
+.page .caption {
+    color: #fff;
+    font-size: 1.9em;
+    padding: 0 1.2em;
+    position: relative;
+    top: 45%;
+    -moz-transform: translateY(-45%);
+    -webkit-transform: translateY(-45%);
+    transform: translateY(-45%);
+}
+
+.page
+.caption.last {
+    color: #aaa;
+}
+
+.page .hot-text {
+    top: 20%;
+}
+
+.page .cold-text {
+    top: 70%;
+}
+
+.animate-enter,
+.animate-leave {
+    -webkit-transition: 0.3s cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+    -moz-transition: 0.3s cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+    -ms-transition: 0.3s cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+    -o-transition: 0.3s cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+    transition: 0.3s cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
     position: relative;
     display: block;
     overflow: hidden;
     text-overflow: clip;
-    white-space:nowrap;
+    white-space: nowrap;
 }
- 
+
 .animate-leave.animate-leave-active,
 .animate-enter {
     opacity: 0;
     width: 0px;
     height: 0px;
 }
- 
-.animate-enter.animate-enter-active, 
+
+.animate-enter.animate-enter-active,
 .animate-leave {
     opacity: 1;
     width: 150px;
     height: 30px;
 }
 
-[ui-view]{
-  position: fixed;
-  width: 100%;
-  height: 100%;
+[ui-view] {
+    position: fixed;
+    width: 100%;
+    height: 100%;
 }
 
 // Component styles are injected through grunt
 // injector
-@import 'account/login/login.scss';
-@import 'admin/admin.scss';
-@import 'gradient/gradient.scss';
-@import 'intro/intro.scss';
-@import 'main/main.scss';
-@import 'reward/reward.scss';
-@import 'colors/colors.scss';
+@import "account/login/login.scss";
+@import "admin/admin.scss";
+@import "gradient/gradient.scss";
+@import "intro/intro.scss";
+@import "main/main.scss";
+@import "reward/reward.scss";
+@import "colors/colors.scss";
+
 // endinjector
