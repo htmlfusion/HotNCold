@@ -3,6 +3,7 @@
 angular.module('gishAppApp')
   .controller('IntroCtrl', function ($scope, $timeout, $state) {
 
+
     $scope.carouselIndex = 0;
     $scope.intros = [{
         caption: 'Welcome'
@@ -10,10 +11,12 @@ angular.module('gishAppApp')
         caption: "You're going to have to move your feet"
       },{
         caption: 'The closer you get, the hotter you get',
-        alignment: 'hot-text'
+        alignment: 'hot-text',
+        transition: 'animate-enter'
       },{
         caption: 'The further you get, the colder you get',
-        alignment: 'cold-text'
+        alignment: 'cold-text',
+        transition: 'animate-enter'
       },{
         caption: 'Start moving!'
       }
@@ -33,7 +36,9 @@ angular.module('gishAppApp')
         $timeout.cancel(promise);
         promise = null;
 
-      }
+      } 
+
+
 
     });
 

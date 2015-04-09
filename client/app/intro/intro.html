@@ -2,7 +2,10 @@
 
   <ul rn-carousel class="carousel-indicators slide" rn-carousel-index="carouselIndex">
     <li ng-repeat="intro in intros">
-      <div class="caption" ng-class="intro.alignment">
+      <div class="caption" ng-class="{
+      'hot-text': $index===carouselIndex && $index==2,
+       'cold-text': $index===carouselIndex && $index==3,
+      'everyone-else': $index===carouselIndex && $index<5}">
         {{intro.caption}}
       </div>
     </li>
