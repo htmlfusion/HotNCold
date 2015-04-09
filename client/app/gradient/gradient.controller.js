@@ -10,8 +10,8 @@ angular.module('gishAppApp')
     var goal = null,
       user = null,
       totalDistance = null,
-      minRange = .005,
-      maxRange = .008,
+      minRange = .003,
+      maxRange = .005,
       findDistance = 100;
 
     function toRad(deg) {
