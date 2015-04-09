@@ -1,0 +1,10 @@
+digraph G {
+   Login -> "Intro Screen"  [label = "First time user"]
+   Login -> "Item Search"  [label = "Returning user"]
+   "Intro Screen" -> "Item Search";
+   "Item Search" -> "Reset location permission" [label = "User rejects location request"]
+   "Item Search" -> "Reward";
+   "Reward" -> "Item Search" [label = "Replay"];
+}
+
+
