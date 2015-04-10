@@ -7,14 +7,25 @@
     "offline_enabled": true,
     "icons": {
         "16": "assets/icons/icon16.png",
+        "29": "assets/icons/icon29.png",
         "36": "assets/icons/icon36.png",
+        "40": "assets/icons/icon40.png",
         "48": "assets/icons/icon48.png",
+        "50": "assets/icons/icon50.png",
         "57": "assets/icons/icon57.png",
+        "58": "assets/icons/icon58.png",
         "72": "assets/icons/icon72.png",
+        "76": "assets/icons/icon76.png",
+        "78": "assets/icons/icon78.png",
+        "80": "assets/icons/icon80.png",
+        "87": "assets/icons/icon87.png",
         "96": "assets/icons/icon96.png",
         "114": "assets/icons/icon114.png",
+        "120": "assets/icons/icon120.png",
         "128": "assets/icons/icon128.png",
-        "144": "assets/icons/icon144.png"
+        "144": "assets/icons/icon144.png",
+        "152": "assets/icons/icon152.png",
+        "180": "assets/icons/icon180.png"
     },
     "app": {
         "background": {

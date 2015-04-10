@@ -3,14 +3,27 @@
 iconDir=../client/assets/icons
 icon=$iconDir/icon.png
 
-convert $icon -resize 16x16    $iconDir/icon16.png
-convert $icon -resize 36x36    $iconDir/icon36.png
-convert $icon -resize 48x48    $iconDir/icon48.png
-convert $icon -resize 57x57    $iconDir/icon57.png
-convert $icon -resize 72x72    $iconDir/icon72.png
-convert $icon -resize 96x96    $iconDir/icon96.png
-convert $icon -resize 114x114  $iconDir/icon114.png
-convert $icon -resize 128x128  $iconDir/icon128.png
-convert $icon -resize 144x144  $iconDir/icon144.png
+convert $icon -resize 16x16      $iconDir/icon16.png
+convert $icon -resize 29x29      $iconDir/icon29.png
+convert $icon -resize 36x36      $iconDir/icon36.png
+convert $icon -resize 40x40      $iconDir/icon40.png
+convert $icon -resize 48x48      $iconDir/icon48.png
+convert $icon -resize 50x50      $iconDir/icon50.png
+convert $icon -resize 57x57      $iconDir/icon57.png
+convert $icon -resize 58x58      $iconDir/icon58.png
+convert $icon -resize 60x60      $iconDir/icon60.png
+convert $icon -resize 72x72      $iconDir/icon72.png
+convert $icon -resize 76x76      $iconDir/icon76.png
+convert $icon -resize 78x78      $iconDir/icon78.png
+convert $icon -resize 80x80      $iconDir/icon80.png
+convert $icon -resize 87x87      $iconDir/icon87.png
+convert $icon -resize 96x96      $iconDir/icon96.png
+convert $icon -resize 114x114    $iconDir/icon114.png
+convert $icon -resize 120x120    $iconDir/icon120.png
+convert $icon -resize 128x128    $iconDir/icon128.png
+convert $icon -resize 144x144    $iconDir/icon144.png
+convert $icon -resize 152x152    $iconDir/icon152.png
+convert $icon -resize 180x180    $iconDir/icon180.png
 
 echo `ls $iconDir`
+
