@@ -1,12 +1,13 @@
 'use strict';
 
 angular.module('gishAppApp')
-  .controller('GradientCtrl', function($scope, $cordovaGeolocation, $state) {
+  .controller('GradientCtrl', function($scope, $state, geolocation) {
 
 
     //On win $state.go('goodjob');
 
 
+    $scope.distance = 0;
     var goal = null,
       user = null,
       totalDistance = null,
@@ -73,18 +74,22 @@ angular.module('gishAppApp')
       enableHighAccuracy: true
     };
 
-    $cordovaGeolocation.watchPosition(posOptions)
+    geolocation.watchPosition(posOptions)
       .then(null,
         function(err) {
           console.log(err);
         },
-        function(location) {
-          user = location.coords;
-          if( !goal ){
-            goal = nearByLocation(user);
-          }
-          if (totalDistance === null) {
-            totalDistance = geolib.getDistance(goal, user);
+        function(data) {
+          if(data.location){
+            user = data.location.coords;
+            if( !goal ){
+              goal = nearByLocation(user);
+            }
+            if (totalDistance === null) {
+              totalDistance = geolib.getDistance(goal, user);
+            }
+          } else {
+            console.log('err', data);
           }
         });
 
@@ -113,6 +118,7 @@ angular.module('gishAppApp')
         };
 
         var distance = geolib.getDistance(goal, user);
+        $scope.distance = distance;
 
         if(distance<=findDistance){
           goal = null;
@@ -142,7 +148,7 @@ angular.module('gishAppApp')
         $scope.style.background = $scope.style.background.replace(key, gradePosition[key]);
       });
 
-      console.log($scope.style);
+      //console.log($scope.style);
       $scope.$apply();
       // Do something
     };
