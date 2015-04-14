@@ -3,7 +3,7 @@
     "description": "A treasure hunt",
     "manifest_version": 2,
     "minimum_chrome_version": "36",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "offline_enabled": true,
     "icons": {
         "16": "assets/icons/icon16.png",
