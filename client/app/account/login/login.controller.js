@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('gishAppApp')
+angular.module('gishApp')
   .controller('LoginCtrl', function ($scope, Auth, $location, $window) {
     $scope.user = {};
     $scope.errors = {};

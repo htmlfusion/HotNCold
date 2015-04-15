@@ -1,13 +1,14 @@
 'use strict';
 
-angular.module('gishAppApp', [
+angular.module('gishApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
   'btford.socket-io',
   'ui.router',
   'angular-carousel',
-  'ngCordova'
+  'ngCordova',
+	'ngCachedResource'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('gishAppApp')
+angular.module('gishApp')
   .controller('GradientCtrl', function($scope, $state, geolocation) {
 
 

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('gishAppApp')
+angular.module('gishApp')
   .controller('MainCtrl', function ($scope, $http, socket) {
     $scope.awesomeThings = [];
 

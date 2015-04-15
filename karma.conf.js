@@ -24,6 +24,7 @@ module.exports = function(config) {
       'client/bower_components/angular-carousel/dist/angular-carousel.js',
       'client/bower_components/angular-touch/angular-touch.js',
       'client/bower_components/ngCordova/dist/ng-cordova.js',
+			'client/bower_components/angular-cached-resource/angular-cached-resource.js',
       'client/app/app.js',
       'client/app/app.coffee',
       'client/app/**/*.js',

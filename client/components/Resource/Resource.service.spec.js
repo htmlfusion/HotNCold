@@ -3,7 +3,7 @@
 describe('Service: Resource', function () {
 
   // load the service's module
-  beforeEach(module('goGoGabApp'));
+  beforeEach(module('gishApp'));
 
   // instantiate service
   var Resource;

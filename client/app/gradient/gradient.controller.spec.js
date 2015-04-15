@@ -3,7 +3,7 @@
 // describe('Controller: GradientCtrl', function () {
 
 //   // load the controller's module
-//   beforeEach(module('gishAppApp'));
+//   beforeEach(module('gishApp'));
 
 //   var GradientCtrl, scope;
 

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('gishAppApp')
+angular.module('gishApp')
   .controller('RewardCtrl', function ($scope) {
     $scope.rewards = [{
       badge: "Explorer"

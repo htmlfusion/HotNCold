@@ -3,7 +3,7 @@
 describe('Controller: MainCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('gishAppApp'));
+  beforeEach(module('gishApp'));
   beforeEach(module('socketMock'));
 
   var MainCtrl,

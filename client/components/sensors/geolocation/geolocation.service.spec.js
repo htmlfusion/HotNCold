@@ -3,7 +3,7 @@
 describe('Service: geolocation', function () {
 
   // load the service's module
-  beforeEach(module('gishAppApp'));
+  beforeEach(module('gishApp'));
 
   // instantiate service
   var geolocation;

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('gishAppApp')
+angular.module('gishApp')
   .directive('colors', function() {
     return {
       templateUrl: 'components/colors/colors.html',

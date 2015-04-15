@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('gishAppApp')
+angular.module('gishApp')
 .constant('deviceConfig', {
   domain: '/* @echo DOMAIN */'
 })
