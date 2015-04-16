@@ -6,13 +6,13 @@ describe('Service: geoCache', function () {
   beforeEach(module('gishApp'));
 
   // instantiate service
-  var geoCache;
-  beforeEach(inject(function (_geoCache_) {
-    geoCache = _geoCache_;
+  var GeoCache;
+  beforeEach(inject(function (_GeoCache_) {
+    GeoCache = _GeoCache_;
   }));
 
   it('should do something', function () {
-    expect(!!geoCache).toBe(true);
+    expect(!!GeoCache).toBe(true);
   });
 
 });
