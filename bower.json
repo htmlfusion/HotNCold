@@ -16,7 +16,7 @@
     "ngCordova": "~0.1.14-alpha",
     "geolib": "~2.0.9",
     "angular-cached-resource": "~1.4.2",
-    "GeoMock": "git@github.com:htmlfusion/GeoMock.git#master"
+    "GeoMock": "https://github.com/htmlfusion/GeoMock.git#master"
   },
   "devDependencies": {
     "angular-mocks": ">=1.2.*",
