@@ -1,13 +1,23 @@
 'use strict';
 
 angular.module('gishApp')
-  .factory('Scene', function (User, GeoCache) {
+  .factory('Scene', function (Resource, User, GeoCache, $q) {
 
     // Public API here
-    var Scene = function() {
-      this.user = new User();
+    var Scene = Resource('/api/scenes/:id');
 
-    };
+    /**
+     * Initialize or reset the scene
+     */
+    Scene.prototype.init = function(){
+
+      this.user = new User();
+      this.goal = null;
+      this.distance = 300;
+      this.threshold = 100;
+      this.complete = false;
+
+    }
 
     /**
      * A factory for GeoCache objects randomly placed within a specified distance
@@ -50,12 +60,39 @@ angular.module('gishApp')
 
     };
 
-    Scene.prototype.startMission = function(){
 
-      this.user.watchPosition()
+
+    /**
+     * Initializes the scene and starts the level
+     * @return {Promise} Promise resolves when the scene has be initialized
+     */
+    Scene.prototype.startLevel = function(){
+
+      this.init();
+
+      var deferred = $q.defer();
+
+      this.user.getCurrentPosition()
         .then(function(location){
 
-        });
+          this.goal = this.createRandomCache(location, this.distance);
+
+          this.user.watchPosition()
+            .then(function(location){
+              this.distance = geolib.getDistance(this.user.location, this.goal.location);
+              if(this.distance < this.threshold){
+                this.complete = true;
+              }
+
+            }.bind(this));
+
+          deferred.resolve();
+
+        }.bind(this))
+        .catch(deferred.reject);
+        
+      return deferred.promise;
+
     };
 
     return Scene;

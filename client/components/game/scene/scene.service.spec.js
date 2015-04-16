@@ -3,7 +3,10 @@
 describe('Service: scene', function () {
 
   // load the service's module
-  beforeEach(module('gishApp'));
+  beforeEach(function(){
+    module('gishApp')
+    module('ngCordovaMocks');
+  });
 
   // instantiate service
   var Scene;
@@ -22,6 +25,15 @@ describe('Service: scene', function () {
     var geoCache = scene.createRandomCache(location, distance);
     var distance = geolib.getDistance(location, geoCache.location);
     expect(distance).toBe(100);
+  });
+
+  it('should initialize the mini game', function (done) {
+    var scene = new Scene();
+    scene.startLevel()
+      .then(function(){
+        expect(scene.target.location).not.toBe(null);
+        expect(scene.user.location).not.toBe(null);
+      });
   });
 
 });
