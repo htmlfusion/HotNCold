@@ -27,6 +27,7 @@ module.exports = function(config) {
       'client/bower_components/angular-cached-resource/angular-cached-resource.js',
       'client/bower_components/geolib/dist/geolib.js',
       'client/bower_components/ngCordova/dist/ng-cordova-mocks.js',
+      'client/bower_components/bind-polyfill/index.js',
       'client/app/app.js',
       'client/app/app.coffee',
       'client/app/**/*.js',
