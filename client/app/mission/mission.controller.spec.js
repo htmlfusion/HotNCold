@@ -3,7 +3,11 @@
 describe('Controller: MissionCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('gishApp'));
+  beforeEach(function(){
+    module('gishApp')
+    module('ngCordovaMocks');
+  });
+
 
   var MissionCtrl, scope;
 
