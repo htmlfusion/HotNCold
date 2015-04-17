@@ -39,7 +39,7 @@ angular.module('gishApp')
 
       var prom = geolocation.watchPosition(posOptions);
 
-      prom.then(function(location){
+      prom.then(null, null, function(location){
         this.location = location;
       }.bind(this));
 
