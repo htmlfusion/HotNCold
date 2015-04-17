@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('gishApp')
-  .factory('User', function (Resource, geolocation, $cordovaGeolocation) {
+  .factory('User', function (Resource, geolocation, $cordovaGeolocation, 
+      $cordovaDeviceOrientation) {
 
     var user = Resource('/api/users/:id/:controller', {
       id: '@_id'
@@ -22,6 +23,7 @@ angular.module('gishApp')
     });
 
     user.prototype.location = null;
+    user.prototype.heading = null;
     user.prototype.locationPromise = null;
 
     /**
@@ -58,11 +60,23 @@ angular.module('gishApp')
         enableHighAccuracy: false
       };
 
-      return $cordovaGeolocation.getCurrentPosition(posOptions)
-        .then(function(position){
+      var prom = $cordovaGeolocation.getCurrentPosition(posOptions)
+      prom.then(function(position){
           this.location = position;
         }.bind(this));
+      return prom;
 
+    };
+
+    user.prototype.watchHeading = function(){
+      var options = {frequency: 1000};
+      var prom = $cordovaDeviceOrientation.watchHeading();
+
+      prom.then(function(heading){
+          this.heading = heading;
+        }.bind(this));
+
+      return prom;
     };
 
     return user;

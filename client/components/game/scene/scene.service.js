@@ -13,11 +13,19 @@ angular.module('gishApp')
 
       this.user = new User();
       this.goal = null;
+
       this.distance = 300;
+      this.totalDistance = 300;
       this.threshold = 100;
+      this.progress = 0;
+      this.remaining = 100;
+
       this.complete = false;
 
-    }
+      //Bearing between the user and their goal
+      this.bearing = 0;
+
+    };
 
     /**
      * A factory for GeoCache objects randomly placed within a specified distance
@@ -30,21 +38,13 @@ angular.module('gishApp')
       // This is based on the stack overflow question above. 
       // Instead, however, we are using a random bearing.
 
-      Number.prototype.toRad = function() {
-        return this * Math.PI / 180;
-      }
-
-      Number.prototype.toDeg = function() {
-        return this * 180 / Math.PI;
-      }
-
       var geoCache = new GeoCache();
 
       var dist = distance / 1000 / 6371;  
       var brng = Math.PI * 2 * Math.random();  
 
-      var lat1 = location.latitude.toRad(), 
-        lon1 = location.longitude.toRad();
+      var lat1 = location.latitude * Math.PI / 180, 
+        lon1 = location.longitude * Math.PI / 180;
 
       var lat2 = Math.asin(Math.sin(lat1) * Math.cos(dist) + 
                             Math.cos(lat1) * Math.sin(dist) * Math.cos(brng));
@@ -54,7 +54,7 @@ angular.module('gishApp')
                                     Math.cos(dist) - Math.sin(lat1) *
                                     Math.sin(lat2));
 
-      geoCache.location = {latitude: lat2.toDeg(), longitude: lon2.toDeg()};
+      geoCache.location = {latitude: lat2 * 180 / Math.PI, longitude: lon2 * 180 / Math.PI};
 
       return geoCache;
 
@@ -79,18 +79,28 @@ angular.module('gishApp')
 
           this.user.watchPosition()
             .then(function(location){
+
               this.distance = geolib.getDistance(this.user.location, this.goal.location);
+              this.progress = (this.totalDistance - this.distance) / this.totalDistance * 100;
+              this.remaining = 100 - this.progress;
+
+
               if(this.distance < this.threshold){
                 this.complete = true;
               }
 
             }.bind(this));
 
+          this.user.watchHeading()
+            .then(function(heading){
+              this.bearing = this.goal.userBearing(user);
+            }.bind(this));
+
           deferred.resolve();
 
         }.bind(this))
         .catch(deferred.reject);
-        
+
       return deferred.promise;
 
     };

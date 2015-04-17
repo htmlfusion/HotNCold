@@ -3,4 +3,5 @@
 angular.module('gishApp')
   .controller('MissionCtrl', function ($scope, Scene) {
     $scope.scene = new Scene();
+    $scope.scene.startLevel();
   });
