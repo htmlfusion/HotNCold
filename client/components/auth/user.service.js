@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gishApp')
-  .factory('User', function (Resource, geolocation, $cordovaGeolocation, 
+  .factory('User', function (Resource, geolocation, deviceOrientation, $cordovaGeolocation, 
       $cordovaDeviceOrientation) {
 
     var user = Resource('/api/users/:id/:controller', {
@@ -69,10 +69,17 @@ angular.module('gishApp')
     };
 
     user.prototype.watchHeading = function(){
-      var options = {frequency: 1000};
-      var prom = $cordovaDeviceOrientation.watchHeading();
+      var options = {frequency: 1000},
+        prom;
 
-      prom.then(function(heading){
+      // If we're native than we'll use the cordova plugin
+      if(navigator.compass){
+        prom = $cordovaDeviceOrientation.watchHeading();
+      } else {
+        prom = deviceOrientation.watchHeading();
+      }
+
+      prom.then(null, function(){}, function(heading){
           this.heading = heading;
         }.bind(this));
 
