@@ -30,7 +30,8 @@ angular.module('gishApp')
         });
 
         var path = new paper.Path();
-        path.strokeColor = 'white';
+        // For testing gradient from-to point calculation
+        // path.strokeColor = 'white';
         path.add(new paper.Point(width/2, 0-height));
         path.add(new paper.Point(width/2, height*2));
         path.pivot = new paper.Point(width/2, height/2);
