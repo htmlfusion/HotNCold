@@ -58,8 +58,6 @@ angular.module('gishApp')
                 destination: intersections[1].point 
             };
 
-          console.log([0, incr, incr*2, incr*3, Math.min(1, incr*4)])
-
         };
         paper.view.draw();
       }
