@@ -35,32 +35,22 @@ angular.module('gishApp')
         path.add(new paper.Point(width/2, height*2));
         path.pivot = new paper.Point(width/2, height/2);
 
-        // path.rotate(20);
-
-        // var intersections = path.getIntersections(rect);
-
-        // rect.fillColor = {
-        //       gradient: {
-        //         stops: [['#D71A1A', 0], ['#BC128B', .33], ['#630DA9', .66], ['#070076', 1]],
-        //       },
-        //       origin: intersections[0].point,
-        //       destination: intersections[1].point 
-        //   };
-
         paper.view.onFrame = function(event){
 
-          path.setRotation(scope.scene.bearing);
+          path.setRotation(scope.scene.bearing-180);
 
           var intersections = path.getIntersections(rect);
 
-          scope.scene.remaining = 20;
-          var incr = (scope.scene.remaining / 4)/100.0;
+          //For teting different gradient looks;
+          //scope.scene.remaining = 10;
+
+          var incr = (scope.scene.remaining / 3)/100.0;
            
           rect.fillColor = {
                 gradient: {
                   stops: [
-                    ['#D71A1A', 0], ['#D71A1A', incr], ['#BC128B', incr*2], 
-                    ['#630DA9', incr*3], ['#070076', Math.min(1, incr*4)]
+                    ['#D71A1A', 1], ['#D71A1A', incr*3], ['#BC128B', incr*2], 
+                    ['#630DA9', incr], ['#070076', 0]
                   ],
                 },
                 origin: intersections[0].point,
