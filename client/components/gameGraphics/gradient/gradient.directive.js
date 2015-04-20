@@ -5,44 +5,62 @@ angular.module('gishApp')
     return {
       templateUrl: 'components/gameGraphics/gradient/gradient.html',
       restrict: 'EA',
+      scope: {
+        scene: '='
+      },
       link: function (scope, element, attrs) {
+
+        var width = element.prop('offsetWidth');
+        var height = element.prop('offsetHeight');
+
         var canvas = element.find('canvas');
+        canvas.prop('width', width);
+        canvas.prop('height', height);
+
         paper.setup(canvas[0]);
         // Create a Paper.js Path to draw a line into it:
 
 
-        // Define two points which we will be using to construct
-        // the path and to position the gradient color:
         var topLeft = [0, 0];
-        var bottomRight = [360, 640];
+        var bottomRight = [width, height];
 
-        // // Create a rectangle shaped path between
-        // // the topLeft and bottomRight points:
         var rect = new paper.Path.Rectangle({
             topLeft: topLeft,
             bottomRight: bottomRight,
-            // Fill the path with a gradient of three color stops
-            // that runs between the two points we defined earlier:
         });
 
         var path = new paper.Path();
-        //path.strokeColor = 'white';
-        path.add(new paper.Point(180, -200));
-        path.add(new paper.Point(180, 700));
-        path.pivot = new paper.Point(180,320)
+        path.fillColor = 'white';
+        path.add(new paper.Point(width/2, 0-height));
+        path.add(new paper.Point(width/2, height*2));
+        path.pivot = new paper.Point(width/2, height/2);
 
-        path.rotate(0);
+        // path.rotate(20);
 
-        var intersections = path.getIntersections(rect);
+        // var intersections = path.getIntersections(rect);
 
-        rect.fillColor = {
-              gradient: {
-                stops: [['#D71A1A', 0], ['#BC128B', .33], ['#630DA9', .66], ['#070076', 1]],
-              },
-              origin: intersections[0].point,
-              destination: intersections[1].point 
-          };
+        // rect.fillColor = {
+        //       gradient: {
+        //         stops: [['#D71A1A', 0], ['#BC128B', .33], ['#630DA9', .66], ['#070076', 1]],
+        //       },
+        //       origin: intersections[0].point,
+        //       destination: intersections[1].point 
+        //   };
 
+        paper.view.onFrame = function(event){
+
+          path.rotate(scope.scene.bearing);
+          var intersections = path.getIntersections(rect);
+          rect.fillColor = {
+                gradient: {
+                  stops: [['#D71A1A', 0], ['#BC128B', .33], ['#630DA9', .66], ['#070076', 1]],
+                },
+                origin: intersections[0].point,
+                destination: intersections[1].point 
+            };
+
+
+        };
         paper.view.draw();
       }
     };

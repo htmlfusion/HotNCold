@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gishApp')
-  .factory('Scene', function (Resource, User, GeoCache, $q) {
+  .factory('Scene', function (Resource, User, GeoCache, $q, $timeout) {
 
     // Public API here
     var Scene = Resource('/api/scenes/:id');
@@ -73,9 +73,9 @@ angular.module('gishApp')
       var deferred = $q.defer();
 
       this.user.getCurrentPosition()
-        .then(function(location){
+        .then(function(position){
 
-          this.goal = this.createRandomCache(location, this.distance);
+          this.goal = this.createRandomCache(position.coords, this.distance);
 
           this.user.watchPosition()
             .then(function(location){
@@ -92,8 +92,8 @@ angular.module('gishApp')
             }.bind(this));
 
           this.user.watchHeading()
-            .then(function(heading){
-              this.bearing = this.goal.userBearing(user);
+            .then(null, null, function(heading){
+              this.bearing = this.goal.userBearing(this.user);
             }.bind(this));
 
           deferred.resolve();

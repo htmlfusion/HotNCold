@@ -12,7 +12,7 @@ angular.module('gishApp')
       if($scope.carouselIndex === 4 ){
 
         promise = $timeout(function(){
-          $state.go('gradient');
+          $state.go('mission');
         }, 2500);
 
       } else if(promise){
@@ -21,8 +21,6 @@ angular.module('gishApp')
         promise = null;
 
       } 
-
-
 
     });
 

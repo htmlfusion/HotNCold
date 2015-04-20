@@ -18,15 +18,15 @@ angular.module('gishApp')
         lng1 = this.location.longitude,
         lat2 = location.latitude,
         lng2 = location.longitude,
-        dLon = (lng2 - lng1).toRad(),
-        lat1 = lat1.toRad(),
-        lat2 = lat2.toRad();
+        dLon = (lng2 - lng1) * Math.PI / 180,
+        lat1 = lat1 * Math.PI / 180,
+        lat2 = lat2 * Math.PI / 180;
 
       var y = Math.sin(dLon) * Math.cos(lat2);
       var x = Math.cos(lat1) * Math.sin(lat2) - Math.sin(lat1) * Math.cos(lat2) 
         * Math.cos(dLon);
       var rad = Math.atan2(y, x);
-      var brng = rad.toDeg();
+      var brng = rad * Math.PI / 180;
 
       return (brng + 360) % 360;
 
