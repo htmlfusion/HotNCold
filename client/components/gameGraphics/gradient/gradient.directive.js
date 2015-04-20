@@ -50,15 +50,24 @@ angular.module('gishApp')
         paper.view.onFrame = function(event){
 
           path.setRotation(scope.scene.bearing);
+
           var intersections = path.getIntersections(rect);
+
+          scope.scene.remaining = 20;
+          var incr = (scope.scene.remaining / 4)/100.0;
+           
           rect.fillColor = {
                 gradient: {
-                  stops: [['#D71A1A', 0], ['#BC128B', .33], ['#630DA9', .66], ['#070076', 1]],
+                  stops: [
+                    ['#D71A1A', 0], ['#D71A1A', incr], ['#BC128B', incr*2], 
+                    ['#630DA9', incr*3], ['#070076', Math.min(1, incr*4)]
+                  ],
                 },
                 origin: intersections[0].point,
                 destination: intersections[1].point 
             };
 
+          console.log([0, incr, incr*2, incr*3, Math.min(1, incr*4)])
 
         };
         paper.view.draw();
