@@ -50,7 +50,7 @@ angular.module('gishApp')
           rect.fillColor = {
                 gradient: {
                   stops: [
-                    ['#D71A1A', 1], ['#D71A1A', incr*3], ['#BC128B', incr*2], 
+                    ['#D71A1A', 1], ['#D71A1A', Math.min(1, incr*3)], ['#BC128B', incr*2], 
                     ['#630DA9', incr], ['#070076', 0]
                   ],
                 },

@@ -1,4 +1,6 @@
 {
     "packageId": "com.gishwhes.hotncold",
-    "androidTheme": "@android:style/Theme.Light"
+    "androidTheme": "@android:style/Theme.Light",
+    "cspUnsafeInline": true,
+    "cspUnsafeEval": true
 }
