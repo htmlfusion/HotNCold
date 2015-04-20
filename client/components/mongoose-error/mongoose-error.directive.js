@@ -3,7 +3,7 @@
 /**
  * Removes server error when user updates input
  */
-angular.module('gishAppApp')
+angular.module('gishApp')
   .directive('mongooseError', function () {
     return {
       restrict: 'A',

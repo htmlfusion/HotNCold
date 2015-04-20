@@ -1,20 +1,21 @@
 'use strict';
 
-angular.module('gishAppApp', [
+angular.module('gishApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
   'btford.socket-io',
   'ui.router',
   'angular-carousel',
-  'ngCordova'
+  'ngCordova',
+	'ngCachedResource'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
       .otherwise('/');
 
     $locationProvider.html5Mode(true);
-    $httpProvider.interceptors.push('authInterceptor');
+    //$httpProvider.interceptors.push('authInterceptor');
   })
 
   .factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {

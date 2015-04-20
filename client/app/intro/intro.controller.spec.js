@@ -3,7 +3,7 @@
 describe('Controller: IntroCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('gishAppApp'));
+  beforeEach(module('gishApp'));
 
   var IntroCtrl, scope;
 

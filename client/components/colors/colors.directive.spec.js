@@ -3,7 +3,7 @@
 describe('Directive: colors', function () {
 
   // load the directive's module and view
-  beforeEach(module('gishAppApp'));
+  beforeEach(module('gishApp'));
   beforeEach(module('components/colors/colors.html'));
 
   var element, scope;

@@ -22,7 +22,7 @@
       <!-- endinjector -->
     <!-- endbuild -->
   </head>
-  <body ng-app="gishAppApp">
+  <body ng-app="gishApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -58,6 +58,9 @@
       <script src="bower_components/angular-carousel/dist/angular-carousel.js"></script>
       <script src="bower_components/ngCordova/dist/ng-cordova.js"></script>
       <script src="bower_components/geolib/dist/geolib.js"></script>
+      <script src="bower_components/angular-cached-resource/angular-cached-resource.js"></script>
+      <script src="bower_components/GeoMock/geomock.js"></script>
+      <script src="bower_components/paper/dist/paper-full.js"></script>
       <!-- endbower -->
       <script src="socket.io-client/socket.io.js"></script>
     <!-- endbuild -->
@@ -71,20 +74,25 @@
           <script src="app/account/signup/signup.controller.js"></script>
           <script src="app/admin/admin.controller.js"></script>
           <script src="app/admin/admin.js"></script>
-          <script src="app/gradient/gradient.controller.js"></script>
-          <script src="app/gradient/gradient.js"></script>
           <script src="app/intro/intro.controller.js"></script>
           <script src="app/intro/intro.js"></script>
           <script src="app/main/main.controller.js"></script>
           <script src="app/main/main.js"></script>
+          <script src="app/mission/mission.controller.js"></script>
+          <script src="app/mission/mission.js"></script>
           <script src="app/reward/reward.controller.js"></script>
           <script src="app/reward/reward.js"></script>
+          <script src="components/Resource/Resource.service.js"></script>
           <script src="components/auth/auth.service.js"></script>
           <script src="components/auth/user.service.js"></script>
           <script src="components/colors/colors.directive.js"></script>
           <script src="components/device/device.service.js"></script>
+          <script src="components/gameGraphics/gradient/gradient.directive.js"></script>
+          <script src="components/gameLogic/geoCache/geoCache.service.js"></script>
+          <script src="components/gameLogic/scene/scene.service.js"></script>
           <script src="components/mongoose-error/mongoose-error.directive.js"></script>
           <script src="components/navbar/navbar.controller.js"></script>
+          <script src="components/sensors/deviceOrientation/deviceOrientation.service.js"></script>
           <script src="components/sensors/geolocation/geolocation.service.js"></script>
           <script src="components/socket/socket.service.js"></script>
           <!-- endinjector -->

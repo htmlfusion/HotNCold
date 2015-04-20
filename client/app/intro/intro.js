@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('gishAppApp')
+angular.module('gishApp')
   .config(function ($stateProvider) {
     $stateProvider
       .state('intro', {

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('gishAppApp')
+angular.module('gishApp')
   .controller('IntroCtrl', function ($scope, $timeout, $state) {
 
 
@@ -12,7 +12,7 @@ angular.module('gishAppApp')
       if($scope.carouselIndex === 4 ){
 
         promise = $timeout(function(){
-          $state.go('gradient');
+          $state.go('mission');
         }, 2500);
 
       } else if(promise){
@@ -21,8 +21,6 @@ angular.module('gishAppApp')
         promise = null;
 
       } 
-
-
 
     });
 

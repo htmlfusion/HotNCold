@@ -172,7 +172,7 @@ module.exports = function (grunt) {
     // Add vendor prefixed styles
     autoprefixer: {
       options: {
-        browsers: ['last 1 version']
+        browsers: ['last 8 version']
       },
       dist: {
         files: [{
@@ -310,7 +310,7 @@ module.exports = function (grunt) {
     ngtemplates: {
       options: {
         // This should be the name of your apps angular module
-        module: 'gishAppApp',
+        module: 'gishApp',
         htmlmin: {
           collapseBooleanAttributes: true,
           collapseWhitespace: true,
