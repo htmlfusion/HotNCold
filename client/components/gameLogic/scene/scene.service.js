@@ -78,7 +78,7 @@ angular.module('gishApp')
           this.goal = this.createRandomCache(position.coords, this.distance);
 
           this.user.watchPosition()
-            .then(function(location){
+            .then(null, null, function(location){
 
               this.distance = geolib.getDistance(this.user.location, this.goal.location);
               this.progress = (this.totalDistance - this.distance) / this.totalDistance * 100;

@@ -30,7 +30,7 @@ angular.module('gishApp')
         });
 
         var path = new paper.Path();
-        path.fillColor = 'white';
+        path.strokeColor = 'white';
         path.add(new paper.Point(width/2, 0-height));
         path.add(new paper.Point(width/2, height*2));
         path.pivot = new paper.Point(width/2, height/2);
@@ -49,7 +49,7 @@ angular.module('gishApp')
 
         paper.view.onFrame = function(event){
 
-          path.rotate(scope.scene.bearing);
+          path.setRotation(scope.scene.bearing);
           var intersections = path.getIntersections(rect);
           rect.fillColor = {
                 gradient: {

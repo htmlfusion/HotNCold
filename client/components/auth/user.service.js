@@ -40,7 +40,9 @@ angular.module('gishApp')
       var prom = geolocation.watchPosition(posOptions);
 
       prom.then(null, null, function(location){
-        this.location = location;
+        if(location.location){
+          this.location = location.location.coords;
+        }
       }.bind(this));
 
       this.locationPromise = prom;
@@ -62,7 +64,7 @@ angular.module('gishApp')
 
       var prom = $cordovaGeolocation.getCurrentPosition(posOptions)
       prom.then(function(position){
-          this.location = position;
+          this.location = position.coords;
         }.bind(this));
       return prom;
 
