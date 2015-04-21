@@ -74,14 +74,11 @@ angular.module('gishApp')
       var options = {frequency: 1000},
         prom;
 
-      // If we're native than we'll use the cordova plugin
-      if(navigator.compass){
-        prom = $cordovaDeviceOrientation.watchHeading();
-      } else {
-        prom = deviceOrientation.watchHeading();
-      }
-
-      prom.then(null, function(){}, function(heading){
+      prom = deviceOrientation.watchHeading();
+      prom.then(null, function(err){
+          console.log('err', err);
+        }, 
+        function(heading){
           this.heading = heading;
         }.bind(this));
 
