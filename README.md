@@ -5,6 +5,8 @@
 
 ## Getting Started
 
+Make sure you have the dependencies below installed.
+
 ```
 git clone git@git.htmlfusion.com:client/gish-app.git
 cd gish-app
@@ -22,41 +24,6 @@ grunt serve
   * [grunt](http://gruntjs.com/getting-started#installing-the-cli)
   * [mongodb](http://docs.mongodb.org/manual/installation/)
   
-#### Environment Variables
-
-* `DOMAIN` fully qualified domain and port for server (http://gishapp.com:8080)
-* `SESSION_SECRET`
-
-#### Configuration
-
-test | development | production configs live in `server/config/environment/*.js`
-
-The development config is probably the most up-to-date
-
-```
-module.exports = {
-  // MongoDB connection options
-  mongo: {
-    uri: 'mongodb://localhost/gishapp-dev'
-  },
-  
-  redis: {
-    host: 'localhost',
-    port: 6379
-  },
-  
-  localStorage: {
-    dir: __dirname+'/../../../client/media/'
-  },
-
-  seedDB: false 
-};
-```
-
-#### Processes
-
-* `node server/app.js`
-
 ### Client
   * [ruby](https://www.ruby-lang.org/en/)
   * [sass](http://sass-lang.com/install)
@@ -142,3 +109,42 @@ Then you can zip align the unaligned apk to an aligned version ready to upload.
 Sign the app
 
     jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore ~/ggg.keystore gish-app.apk YOUR_PET_NAME
+
+
+### Deployment
+
+#### Environment Variables
+
+* `DOMAIN` fully qualified domain and port for server (http://gishapp.com:8080)
+* `SESSION_SECRET`
+
+#### Configuration
+
+test | development | production configs live in `server/config/environment/*.js`
+
+The development config is probably the most up-to-date
+
+```
+module.exports = {
+  // MongoDB connection options
+  mongo: {
+    uri: 'mongodb://localhost/gishapp-dev'
+  },
+  
+  redis: {
+    host: 'localhost',
+    port: 6379
+  },
+  
+  localStorage: {
+    dir: __dirname+'/../../../client/media/'
+  },
+
+  seedDB: false 
+};
+```
+
+#### Processes
+
+* `node server/app.js`
+
